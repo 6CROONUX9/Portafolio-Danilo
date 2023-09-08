@@ -26,15 +26,37 @@ export const aboutData = [
       {
         title: 'Web Development',
         icons: [
-          <FaHtml5 />,
-          <FaCss3 />,
-          <FaJs />,
-          <FaReact />,
+          {
+            icon: <FaHtml5 />,
+            id: 1,
+          },
+
+          {
+            icon: <FaCss3 />,
+            id: 2,
+          },
+
+          {
+            icon: <FaJs />,
+            id: 3,
+          },
+
+          {
+            icon: <FaReact />,
+            id: 4,
+          },
         ],
       },
       {
         title: 'UI/UX Design',
-        icons: [<FaFigma />,  <SiAdobephotoshop />],
+        icons: [{
+          icon: <FaFigma />,
+          id: 1,
+        },
+        {
+          icon: <SiAdobephotoshop />,
+          id: 2,
+        },],
       },
     ],
   },
@@ -190,8 +212,8 @@ const About = () => {
                   <div>{item.stage}</div>
                   <div className='flex gap-x-4'>
                     {/* Iconos */}
-                  {item.icons?.map((icon, itemIndex)=>{
-                    return <div key={itemIndex}  className='text-2xl'>{icon}</div>;
+                  {item.icons?.map((icon)=>{
+                    return <div key={icon.id}  className='text-2xl'>{icon}</div>;
                   })}
                   </div>
                 </div>
